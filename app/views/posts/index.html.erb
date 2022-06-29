@@ -16,6 +16,7 @@
   </div>
 <% end %>
 
+<% (@posts || Post.all).order('created_at DESC').each do |post| %>
   <div>
     <p style="font-size:20px;font-weight:bold;"><%= post.title %></p>
     <p><%= post.body %></p>
