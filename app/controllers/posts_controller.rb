@@ -11,6 +11,18 @@ class PostsController < ApplicationController
 
   def edit
   end
+
+  def create
+    @post = Post.new(post_params)
+
+    if @post.save
+      redirect_to root_path, notice: 'Post has been successfully created'
+    else
+      flash.now[:alert] = 'Post has not been created.'
+      render :index, status: :unprocessable_entity
+    end
+  end
+
     @post = Post.find(params[:id])
   end
 end
