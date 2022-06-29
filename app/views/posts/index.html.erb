@@ -1,6 +1,21 @@
 <h1>Posts</h1>
 
-<% @posts.each do |post| %>
+<%= form_with model: @post do |form| %>
+  <div>
+    <%= form.label :title, style: 'display:block;' %>
+    <%= form.text_field  :title %>
+  </div>
+
+  <div>
+    <%= form.label :body, style: 'display:block;' %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
   <div>
     <p style="font-size:20px;font-weight:bold;"><%= post.title %></p>
     <p><%= post.body %></p>
