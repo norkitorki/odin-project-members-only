@@ -16,10 +16,19 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to root_path, notice: 'Post has been successfully created'
+      redirect_to root_path, notice: 'Post has been successfully created.'
     else
       flash.now[:alert] = 'Post has not been created.'
       render :index, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    if @post.update(post_params)
+      redirect_to @post, notice: 'Post has been successfully updated.'
+    else
+      flash.now[:alert] = 'Post has not been updated.'
+      render :edit, status: :unprocessable_entity
     end
   end
 
