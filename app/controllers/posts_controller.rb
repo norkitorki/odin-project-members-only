@@ -32,6 +32,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post.destroy
+
+    redirect_to root_path, notice: 'Post has been successfully destroyed.'
+  end
+
   private
 
   def set_post
