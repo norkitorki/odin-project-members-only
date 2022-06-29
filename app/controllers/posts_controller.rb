@@ -7,6 +7,10 @@ class PostsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
     @post = Post.find(params[:id])
   end
 end
