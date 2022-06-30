@@ -28,8 +28,10 @@
 
     <div>
       <%= link_to 'Show', post %>
-      <%= link_to 'Edit', edit_post_path(post) %>
-      <%= link_to 'Delete', post_path(post), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you would like to delete this post?' } %>
+      <% if current_user && current_user.id == post.user.id %>
+        <%= link_to 'Edit', edit_post_path(post) %>
+        <%= link_to 'Delete', post_path(post), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you would like to delete this post?' } %>
+      <% end %>
     </div>
   </div>
 <% end %>
