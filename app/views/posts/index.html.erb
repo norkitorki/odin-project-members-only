@@ -12,7 +12,9 @@
   </ul>
 </nav>
 
-<%= render 'form', post: @post %>
+<% if user_signed_in? %>
+  <%= render 'form', post: @post %>
+<% end %>
 
 <% (@posts || Post.all).order('created_at DESC').each do |post| %>
   <div>
