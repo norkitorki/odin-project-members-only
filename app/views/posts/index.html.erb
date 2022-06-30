@@ -1,5 +1,17 @@
 <h1>Posts</h1>
 
+<nav>
+  <ul>
+    <% if user_signed_in? %>
+      <li><%= link_to 'Log Out', destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure that you would like to log out?' } %></li>
+      <li><%= link_to 'Edit User', edit_user_registration_path %></li>
+    <% else %>
+      <li><%= link_to 'Sign In', new_user_session_path %></li>
+      <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+    <% end %>
+  </ul>
+</nav>
+
 <%= render 'form', post: @post %>
 
 <% (@posts || Post.all).order('created_at DESC').each do |post| %>
