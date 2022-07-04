@@ -1,0 +1,18 @@
+<header class="header">
+  <div>
+    <%= link_to 'Home', root_path, class: 'heading' %>
+    <%= link_to 'Sign Up', new_user_registration_path, class: 'heading' %>
+  </div>
+
+  <nav>
+    <div>
+      <% if user_signed_in? %>
+        <p>Welcome, <%= link_to current_user.username, edit_user_registration_path %></p>
+        <%= link_to 'Log Out', destroy_user_session_path, data: { turbo_method: :delete, 
+                                                                  turbo_confirm: 'Are you sure that you would like to log out?' } %>
+      <% else %>
+        <%= render 'layouts/login' %>
+      <% end %>
+    </div>
+  </nav>
+</header>
