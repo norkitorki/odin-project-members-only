@@ -1,0 +1,22 @@
+<div class="user-login">
+  <%= form_with model: User.new, url: user_session_url do |f| %>
+    <div class="field">
+      <%= f.label :username %>
+      <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+
+    <div>
+      <%= f.submit "Log in" %>
+    </div>
+  <% end %>
+</div>
