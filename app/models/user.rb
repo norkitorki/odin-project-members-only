@@ -7,5 +7,9 @@ class User < ApplicationRecord
     uniqueness: true,
     length: { maximum: 40 }
 
-  has_many :posts
+  validates :password,
+    presence: true,
+    length: { minimum: 6 },
+    if: :new_record?
+
 end
