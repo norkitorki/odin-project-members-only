@@ -11,6 +11,15 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def update
+    if update_resource(resource, account_update_params)
+      redirect_to root_path, notice: 'User has been successfully updated.'
+    else
+      flash.now[:alert] = 'User has not been updated.'
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def sign_up_params
