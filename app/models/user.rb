@@ -13,4 +13,10 @@ class User < ApplicationRecord
     if: :new_record?
 
   has_many :posts, dependent: :destroy
+
+  protected
+
+  def email_required?
+    false
+  end
 end
