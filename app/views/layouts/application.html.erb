@@ -11,6 +11,8 @@
   </head>
 
   <body>
+    <%= render 'layouts/header' %>
+
     <% flash.each do |type, msg| %>
       <p style="color:<%= type == 'notice' ? 'green' : 'red' %>;font-weight:bold;"><%= msg %></p>
     <% end %>
