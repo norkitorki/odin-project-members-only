@@ -12,4 +12,5 @@ class User < ApplicationRecord
     length: { minimum: 6 },
     if: :new_record?
 
+  has_many :posts, dependent: :destroy
 end
