@@ -1,34 +1,31 @@
 <h1 class="heading">Sign up</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
   <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+    <%= f.label :username, "Username (40 characters maximum)" %>
+    <%= f.text_field :username, autofocus: true, autocomplete: "username", maxlength: 40 %>
+    <%= render "public/error_field", resource: resource, attribute: :username %>
   </div>
-
+  
   <div class="field">
-    <%= f.label :email, 'Email (optional)' %><br />
+    <%= f.label :email, "Email (optional)" %>
     <%= f.email_field :email, autocomplete: "email" %>
+    <%= render "public/error_field", resource: resource, attribute: :email %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <%= f.label :password, "Password (6 characters minimum)" %>
     <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= render "public/error_field", resource: resource, attribute: :password %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= render "public/error_field", resource: resource, attribute: :password_confirmation %>
   </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
