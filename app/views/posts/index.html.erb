@@ -4,7 +4,7 @@
   <%= render 'form', post: @post %>
 <% end %>
 
-<h1 class="heading">Posts</h1>
+<h1 class="heading">Posts (<%= Post.count %>)</h1>
 
 <% (@posts || Post.all).order('created_at DESC').each do |post| %>
   <div>
