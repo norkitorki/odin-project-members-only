@@ -1,15 +1,17 @@
 <%= form_with model: post do |form| %>
-  <div>
-    <%= form.label :title, style: 'display:block;' %>
+  <div class="field">
+    <%= form.label :title, 'Title (100 characters maximum)' %>
     <%= form.text_field  :title %>
+    <%= render 'public/error_field', resource: post, attribute: :title %>
   </div>
 
-  <div>
-    <%= form.label :body, style: 'display:block;' %>
-    <%= form.text_area :body %>
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body, rows: '10', cols: '60' %>
+    <%= render 'public/error_field', resource: post, attribute: :body %>
   </div>
 
-  <div>
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
