@@ -61,3 +61,51 @@ a:hover { text-decoration: underline; }
 
 .user-login .field { display: inline-block; }
 
+/* posts/index.html.erb */
+
+.posts {
+  width: 90%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+.post {
+  position: relative;
+  overflow-x: scroll;
+  box-shadow: 2px 3px 3px #cecece;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column nowrap;
+  gap: 10px;
+}
+
+.post:hover { background-color: #c4c4c457; }
+
+.post-title { font-weight: bold; }
+
+.post-misc {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.post-details { 
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.post-rating {
+  color: #630707;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.post-links {
+  display: flex;
+  gap: 2px;
+}
+
