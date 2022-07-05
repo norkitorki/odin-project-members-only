@@ -1,4 +1,8 @@
+<div class="post-show">
   <p class="heading"><%= @post.title %></p>
+
+  <div class="post-likes">
+    <p class="post-rating"><%= @post.rating %> people/bots liked this post.</p>
 
     <% if !session[:post_ratings] || session[:post_ratings].none?(@post.id) %>
       <%= form_with model: @post, url: update_rating_url, class: 'like-form' do |f| %>
@@ -15,5 +19,9 @@
     <% end %>
   </div>
 
+  <hr width="100%">
 
-<p><%= @post.body %></p>
+  <p><%= @post.body %></p>
+
+  <%= link_to 'Back', root_path %>
+</div>
