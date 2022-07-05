@@ -13,8 +13,12 @@
   <body>
     <%= render 'layouts/header' %>
 
-    <% flash.each do |type, msg| %>
-      <p style="color:<%= type == 'notice' ? 'green' : 'red' %>;font-weight:bold;"><%= msg %></p>
+    <% if flash.any? %>
+      <div class="flash-messages">
+        <% flash.each do |type, msg| %>
+          <p class="<%= type %>"><%= msg %></p>
+        <% end %>
+      </div>
     <% end %>
 
     <%= yield %>
