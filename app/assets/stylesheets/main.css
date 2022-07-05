@@ -109,3 +109,53 @@ a:hover { text-decoration: underline; }
   gap: 2px;
 }
 
+/* posts/show.html.erb */
+
+.post-show {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-overflow: clip;
+}
+
+.post-show > .heading { text-align: center; }
+
+.post-show  p {
+  max-width: 100%;
+  line-height: 150%;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.post-likes {
+  position: relative;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.post-show .post-rating { font-size: 20px; }
+
+.like-form svg {
+  fill: #b80808;
+  transition: ease-in .1s all;
+}
+
+.like-form svg:hover { 
+  width: 40px;
+  height: 40px;
+}
+
+.like-form svg:hover + span::after {
+  position: relative;
+  bottom: 12px;
+  font-weight: bold;
+  content: 'Like this Post';
+  color: #b80808;
+}
+
+.post-show > .back-link { align-self: flex-start; }
+
