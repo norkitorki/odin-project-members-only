@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :posts
 
   root 'posts#index'
+
+  patch 'posts/:id/update_rating', to: 'posts#update_rating', as: 'update_rating'
 end
