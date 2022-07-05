@@ -1,7 +1,7 @@
 <%= form_with model: post do |form| %>
   <div class="field">
     <%= form.label :title, 'Title (100 characters maximum)' %>
-    <%= form.text_field  :title %>
+    <%= form.text_field  :title, maxlength: 100 %>
     <%= render 'public/error_field', resource: post, attribute: :title %>
   </div>
 
