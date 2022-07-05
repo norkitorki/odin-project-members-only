@@ -17,10 +17,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_30_051727) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "body"
-    t.integer "rating", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.integer "rating", default: 0
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
