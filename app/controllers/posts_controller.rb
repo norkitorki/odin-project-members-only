@@ -33,6 +33,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def update_rating
+    session[:post_ratings] ||= []
+    
+    if session[:post_ratings].none?(@post.id) && @post.update(rating_params)
+      session[:post_ratings] << @post.id
+      redirect_to @post, notice: 'You liked this post.'
+    else
+      flash.now[:alert] = 'You have already liked this post.'
+      render :show, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @post.destroy
 
