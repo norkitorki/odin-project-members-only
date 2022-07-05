@@ -1,0 +1,7 @@
+<% if resource.errors[attribute].any? %>
+  <div class="error-field">
+    <% resource.errors.full_messages_for(attribute).each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  </div>
+<% end %>
