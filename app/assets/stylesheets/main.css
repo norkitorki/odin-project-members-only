@@ -159,3 +159,43 @@ a:hover { text-decoration: underline; }
 
 .post-show > .back-link { align-self: flex-start; }
 
+/* form styles */
+
+form:not(.header form) {
+  display: flex; 
+  flex-direction: column;
+  gap: 15px;
+}
+
+form label { font-weight: bold; }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field input { height: 30px; }
+
+.error-field {
+  color: #ffffff;
+  font-size: 12px;
+  background-color: #630707;
+  width: max-content;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.actions { align-self: center; }
+
+input[type="submit"], button[type="submit"] {
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #630707;
+  border: none;
+  padding: 6px 10px;
+}
+
+.post button[type="submit"] { font-size: 13px; }
+
+input[type="submit"]:hover, button[type="submit"]:hover { background-color: #8a0909; }
