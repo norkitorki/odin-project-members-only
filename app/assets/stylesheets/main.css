@@ -26,3 +26,15 @@ a {
 
 a:hover { text-decoration: underline; }
 
+/* flash messages */
+
+.flash-messages {
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.notice { color: #127409; }
+
+.alert { color: #630707; }
+
