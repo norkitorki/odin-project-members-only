@@ -6,22 +6,8 @@
 
 <h1 class="heading">Posts (<%= Post.count %>)</h1>
 
-<% (@posts || Post.all).order('created_at DESC').each do |post| %>
-  <div>
-    <p>
-      <strong><%= post.title %></strong>
-      <% if user_signed_in? %>
-        by <%= post.user.username %>
-      <% end %>
-    </p>
-    <p><%= post.body %></p>
-
-    <div>
-      <%= link_to 'Show', post %>
-      <% if current_user && current_user.id == post.user.id %>
-        <%= link_to 'Edit', edit_post_path(post) %>
-        <%= link_to 'Delete', post_path(post), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you would like to delete this post?' } %>
-      <% end %>
-    </div>
-  </div>
-<% end %>
+<div class="posts">
+  <% (@posts || Post.all).order('created_at DESC').each do |post| %>
+    <%= render 'post', post: post %>
+  <% end %>
+</div>
