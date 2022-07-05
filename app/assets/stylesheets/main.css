@@ -38,3 +38,26 @@ a:hover { text-decoration: underline; }
 
 .alert { color: #630707; }
 
+/* layouts/_header.html.erb */
+
+.header {
+  width: 95%;
+  color: #ffffff;
+  background-color: #630707;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 2px 4px 3px #00000094;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .heading { font-size: 20px; }
+
+.user-login form {
+  display: flex;
+  gap: 10px;
+}
+
+.user-login .field { display: inline-block; }
+
