@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: %i[ index show ]
+  before_action :set_post, only: %i[ show edit update update_rating destroy ]
+  before_action :authenticate_user!, except: %i[ index show update_rating ]
 
   def index
     @post = Post.new
