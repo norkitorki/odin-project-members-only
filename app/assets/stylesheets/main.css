@@ -19,7 +19,7 @@ a {
   color: inherit;
 }
 
-.back-link { 
+.page-link { 
   font-size: 18px;
   font-weight: bold;
 }
@@ -157,7 +157,7 @@ a:hover { text-decoration: underline; }
   color: #b80808;
 }
 
-.post-show > .back-link { align-self: flex-start; }
+.post-show > .page-link { align-self: flex-start; }
 
 /* form styles */
 
