@@ -1,0 +1,9 @@
+<h1 class="heading">Posts by <%= "#{@user.username} (#{@posts.count})" %></h1>
+
+<div class="posts">
+  <% @posts.each do |post| %>
+    <%= render 'posts/post', post: post %>
+  <% end %>
+
+  <%= link_to 'Back', root_path, class: 'page-link' %>
+</div>
