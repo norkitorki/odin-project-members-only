@@ -54,12 +54,27 @@ a:hover { text-decoration: underline; }
 
 .header .heading { font-size: 20px; }
 
-.user-login form {
-  display: flex;
+.nav-login-form {
+  flex-direction: row;
+  align-items: center;
   gap: 10px;
 }
 
-.user-login .field { display: inline-block; }
+.nav-login-form > .field { 
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-login-form input[type="text"], .nav-login-form input[type="password"] {
+  padding: 5px;
+  width: 200px;
+  height: 15px;
+}
+
+.nav-login-form input[type="submit"] {
+  border: 1px solid #c5b9b9;
+  box-shadow: 2px 2px 2px #0000006b;
+}
 
 /* posts/index.html.erb */
 
@@ -161,7 +176,7 @@ a:hover { text-decoration: underline; }
 
 /* form styles */
 
-form:not(.header form) {
+form {
   display: flex; 
   flex-direction: column;
   gap: 15px;
@@ -206,3 +221,6 @@ input[type="submit"], button[type="submit"] {
 .post button[type="submit"] { font-size: 13px; }
 
 input[type="submit"]:hover, button[type="submit"]:hover { background-color: #8a0909; }
+
+/* layouts/header.html.erb styles */
+
