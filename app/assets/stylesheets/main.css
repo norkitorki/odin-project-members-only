@@ -175,6 +175,13 @@ form label { font-weight: bold; }
   gap: 6px;
 }
 
+.field.remember-me {
+  font-size: 14px;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+}
+
 .field input { height: 30px; }
 
 .error-field {
