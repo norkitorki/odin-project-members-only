@@ -27,6 +27,8 @@ a {
 
 a:hover { text-decoration: underline; }
 
+.hidden { visibility: hidden; }
+
 /* flash messages */
 
 .flash-messages {
