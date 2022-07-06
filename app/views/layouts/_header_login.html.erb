@@ -1,5 +1,4 @@
-<div class="user-login">
-  <%= form_with model: User.new, url: user_session_url do |f| %>
+<div class="user-login" data-turbo="false">
     <div class="field">
       <%= f.label :username %>
       <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
