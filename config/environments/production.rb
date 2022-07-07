@@ -92,5 +92,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Set up the devise mailer
-  config.action_mailer.default_url_options = { host: 'powerful-stream-45740.herokuapp.com/', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'members-only-45740.herokuapp.com/', port: 3000 }
 end
