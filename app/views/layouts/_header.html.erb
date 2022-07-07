@@ -3,7 +3,7 @@
     <%= link_to 'Home', root_path, class: 'heading' %>
   </nav>
 
-  <div data-turbo="false" class="nav-login <%= 'hidden' if controller_name == 'sessions' %>">
+  <div data-turbo="false" class="nav-login">
     <% if user_signed_in? %>
       <p>Welcome, <%= link_to current_user.username, edit_user_registration_path, class: 'post-author' %></p>
       <%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
