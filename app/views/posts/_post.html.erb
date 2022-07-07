@@ -6,8 +6,10 @@
       <span class="post-rating"><%= post.rating.abs >= 1000 ? "#{(post.rating / 1000.0).round(1).to_s.sub('.0', '')}k" : post.rating %></span>
       •  <span><%= distance_of_time_in_words(post.created_at.to_i, Time.now.to_i) %> ago </span>
       <% if user_signed_in? %>
-        <span>by </span>
-        <%= link_to post.user.username, user_posts_path(post.user.username), class: 'post-author' %>
+        <% if controller_name != 'users' %>
+          <span>by </span>
+          <%= link_to post.user.username, user_posts_path(post.user.username), class: 'post-author' %>
+        <% end %>
       <% end %>
     </p>
 
