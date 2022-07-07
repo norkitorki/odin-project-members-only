@@ -47,7 +47,7 @@ a:hover { text-decoration: underline; }
   width: 80%;
   color: #ffffff;
   background-color: #630707;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 6px 6px;
   box-shadow: 2px 4px 3px #00000094;
   padding: 8px 12px;
   display: flex;
