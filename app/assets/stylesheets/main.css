@@ -57,27 +57,30 @@ a:hover { text-decoration: underline; }
 
 .header .heading { font-size: 20px; }
 
-.nav-login-form {
+.nav-login { 
+  display: flex; 
+  gap: 10px;
+  align-items: center;
+}
+
+.nav-login form {
   flex-direction: row;
   align-items: center;
   gap: 10px;
 }
 
-.nav-login-form > .field { 
+.nav-login .field { 
   flex-direction: row;
   align-items: center;
 }
 
-.nav-login-form input[type="text"], .nav-login-form input[type="password"] {
+.nav-login input[type="text"], .nav-login input[type="password"] {
   padding: 5px;
   width: 200px;
   height: 15px;
 }
 
-.nav-login-form input[type="submit"] {
-  border: 1px solid #c5b9b9;
-  box-shadow: 2px 2px 2px #0000006b;
-}
+.nav-login [type="submit"] { border: 1px solid #c5b9b9; }
 
 /* posts/index.html.erb */
 
