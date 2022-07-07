@@ -3,18 +3,16 @@
     <%= link_to 'Home', root_path, class: 'heading' %>
   </nav>
 
-  <div>
-    <div data-turbo="false" class="nav-login <%= 'hidden' if controller_name == 'sessions' %>">
-      <% if user_signed_in? %>
-        <p>Welcome, <%= link_to current_user.username, edit_user_registration_path, class: 'post-author' %></p>
-        <%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= render 'public/new_session_form', user: User.new, display_links: false %>
-        <p>or</p>
-        <% if !user_signed_in? %>
-          <%= button_to 'Sign Up', new_user_registration_path, method: :get, data_turbo: true %>
-        <% end %>
+  <div data-turbo="false" class="nav-login <%= 'hidden' if controller_name == 'sessions' %>">
+    <% if user_signed_in? %>
+      <p>Welcome, <%= link_to current_user.username, edit_user_registration_path, class: 'post-author' %></p>
+      <%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= render 'public/new_session_form', user: User.new, display_links: false %>
+      <p>or</p>
+      <% if !user_signed_in? %>
+        <%= button_to 'Sign Up', new_user_registration_path, method: :get, data_turbo: true %>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </header>
