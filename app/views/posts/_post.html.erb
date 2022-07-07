@@ -15,7 +15,7 @@
 
     <div class="post-links">
       <%= button_to 'Show', post, method: :get %>
-      <% if current_user && current_user.id == post.user.id %>
+      <% if current_user && current_user == post.user %>
         <%= button_to 'Edit', edit_post_path(post), method: :get %>
         <%= button_to 'Delete', post_path(post), method: :delete, data: { turbo_confirm: 'Are you sure you would like to delete this post?' } %>
       <% end %>
