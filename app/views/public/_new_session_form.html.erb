@@ -1,0 +1,26 @@
+<div data-turbo="false">
+  <%= form_for(user, url: user_session_path) do |f| %>
+    <div class="field">
+      <%= f.label :username %>
+      <%= f.text_field :username, autofocus: true, autocomplete: "username", maxlength: 40 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "password" %>
+    </div>
+
+    <div class="field remember-me">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Log in" %>
+    </div>
+  <% end %>
+</div>
+
+<% if display_links %>
+  <%= render "devise/shared/links" %>
+<% end %>
