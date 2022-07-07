@@ -1,28 +1,3 @@
 <h1 class="heading">Log in</h1>
 
-<div data-turbo="false">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :username %>
-      <%= f.text_field :username, autofocus: true, autocomplete: "username", maxlength: 40 %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %>
-      <%= f.password_field :password, autocomplete: "password" %>
-    </div>
-
-    <% if devise_mapping.rememberable? %>
-      <div class="field remember-me">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-      </div>
-    <% end %>
-
-    <div class="actions">
-      <%= f.submit "Log in" %>
-    </div>
-  <% end %>
-</div>
-
-  <%= render "devise/shared/links" %>
+<%= render 'public/new_session_form', user: resource, display_links: true %>
