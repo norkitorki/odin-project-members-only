@@ -44,12 +44,12 @@ a:hover { text-decoration: underline; }
 /* layouts/_header.html.erb */
 
 .header {
-  width: 95%;
+  width: 80%;
   color: #ffffff;
   background-color: #630707;
   border-radius: 0 0 10px 10px;
   box-shadow: 2px 4px 3px #00000094;
-  padding: 10px;
+  padding: 8px 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
