@@ -1,40 +1,20 @@
 <header class="header">
   <nav>
     <%= link_to 'Home', root_path, class: 'heading' %>
-    <%= link_to 'Sign Up', new_user_registration_path, class: 'heading' %>
   </nav>
 
   <div>
-    <% if user_signed_in? %>
+    <div data-turbo="false" class="nav-login <%= 'hidden' if controller_name == 'sessions' %>">
+      <% if user_signed_in? %>
         <p>Welcome, <%= link_to current_user.username, edit_user_registration_path, class: 'post-author' %></p>
         <%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
-    <% else %>
-      <% if controller_name != 'sessions' %>
-        <div data-turbo="false">
-          <% user = User.new %>
-
-          <%= form_with model: user, url: session_path(user), class: 'nav-login-form' do |f| %>
-            <div class="field">
-              <%= f.label :username %>
-              <%= f.text_field :username, autocomplete: "username", maxlength: 40 %>
-            </div>
-
-            <div class="field">
-              <%= f.label :password %>
-              <%= f.password_field :password, autocomplete: "password" %>
-            </div>
-
-            <div class="field remember-me">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
-            </div>
-
-            <div>
-              <%= f.submit "Log in" %>
-            </div>
-          <% end %>
-        </div>
+      <% else %>
+        <%= render 'public/new_session_form', user: User.new, display_links: false %>
+        <p>or</p>
+        <% if !user_signed_in? %>
+          <%= button_to 'Sign Up', new_user_registration_path, method: :get, data_turbo: true %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </header>
