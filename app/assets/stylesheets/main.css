@@ -52,7 +52,7 @@ a:hover { text-decoration: underline; }
 /* layouts/_header.html.erb */
 
 .header {
-  width: 80%;
+  width: 85%;
   color: #ffffff;
   background-color: #630707;
   border-radius: 0 0 6px 6px;
