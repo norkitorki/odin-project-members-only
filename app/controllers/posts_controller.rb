@@ -58,10 +58,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body)
-  end
-
-  def rating_params
-    params.require(:post).permit(:rating)
+    params.require(:post).permit(:title, :body, :rating)
   end
 end
