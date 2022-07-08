@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
 
     if @post.save
-      redirect_to root_path, notice: 'Post has been successfully created.'
+      redirect_to @post, notice: 'Post has been successfully created.'
     else
       flash.now[:alert] = 'Post has not been created.'
       render :index, status: :unprocessable_entity
