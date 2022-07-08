@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit update update_rating destroy ]
+  before_action :set_post, except: %i[ index create ]
   before_action :authenticate_user!, except: %i[ index show update_rating ]
 
   def index
