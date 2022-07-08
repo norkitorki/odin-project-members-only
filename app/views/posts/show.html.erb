@@ -15,8 +15,8 @@
   <div class="post-likes">
     <p class="post-rating"><%= @post.rating %> people/bots liked this post.</p>
 
-    <% if (!session[:post_ratings] || session[:post_ratings].none?(@post.id)) || current_user && current_user != @post.user %>
-      <%= form_with model: @post, url: update_rating_url, class: 'like-form' do |f| %>
+    <% if !session[:liked_posts] || session[:liked_posts].none?(@post.id) %>
+      <%= form_with model: @post, url: update_rating_path, class: 'like-form' do |f| %>
         <%= f.hidden_field :rating, value: @post.rating + 1 %>
 
         <%= link_to '#', onclick: 'document.querySelector(".like-form").submit()' do %>
