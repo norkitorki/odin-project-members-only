@@ -1,10 +1,14 @@
 <div class="post-show">
   <p class="heading"><%= @post.title %></p>
 
-  <% if current_user && current_user == @post.user %>
+  <% if user_signed_in? %>
     <div class="post-links">
-      <%= button_to 'Edit', edit_post_path(@post), method: :get %>
-      <%= button_to 'Delete', post_path(@post), method: :delete, data: { turbo_confirm: 'Are you sure?' } %>
+      <% if current_user == @post.user %>
+        <%= button_to 'Edit', edit_post_path(@post), method: :get %>
+        <%= button_to 'Delete', post_path(@post), method: :delete, data: { turbo_confirm: 'Are you sure?' } %>
+      <% else %>
+        <%= link_to @post.user.username, user_posts_path(@post.user.username), class: 'post-author' %>
+      <% end %>
     </div>
   <% end %>
 
