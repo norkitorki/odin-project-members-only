@@ -7,4 +7,15 @@ class Post < ApplicationRecord
     presence: true
 
   belongs_to :user
+
+  def likeable?(likes, current_user)
+    if ( (!likes && !current_user) ||
+         (!likes && current_user && current_user != user) ||
+         (likes && likes.none?(id) && current_user && current_user != user) ||
+         (likes && likes.none?(id) && !current_user) )
+      true
+    else
+      false
+    end
+  end
 end
